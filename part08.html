@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+    <title>Vue App</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-for="city in cities">{{ city }}</h1>
+        <h2>Sharing :</h2>
+        <ul>
+            <li v-for="(val, key) in framework">{{ key }} : {{ val }}</li>
+        </ul>
+        <p>
+            Prensented by 
+            <span v-for="(com, idx) in comunities">{{ com.name }} from {{ com.city }}, </span> 
+        </p>
+    </div>
+    <script>
+        const App = new Vue({
+            el: '#app',
+            data: {
+                cities: ['Jogja', 'Solo'],
+                comunities: [
+                    { name: 'JogjaJS', city: 'Jogja' },
+                    { name: 'Andronity', city: 'Solo' }
+                ],
+                framework: {
+                    frontend: 'Vue.js',
+                    backend: 'Nest.JS'
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
